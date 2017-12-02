@@ -1,0 +1,44 @@
+.artist-displayer-container {
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+ul {
+    list-style: none;
+}
+
+.tabs {
+    /* margin-left: 4%; */
+}
+
+.tab {
+    display: block;
+    float: left;
+    margin-left: 0.5%;
+    margin-bottom: 2%;
+}
+
+.tracks {
+    clear: both;
+}
+
+.filter-tracks {
+    clear: both;
+    width: 200px;
+    margin-left: 3%;
+}
+
+.track {
+    margin-top: 1%;
+    clear: both;
+
+    margin-left: 1%;
+
+    padding-top: 0.7%;
+    padding-bottom: 0.7%;
+
+    border: solid;
+    border-radius: 5px;
+
+    text-align:center;
+}

@@ -1,0 +1,15 @@
+<div *ngIf="_artists.length > 0" class="artist-displayer-container">
+    <ul class="tabs">
+        <li *ngFor="let artist of _artists, let i = index" class="tab">
+            <button (click)="_changeTab(i)">{{artist.name}}</button>
+        </li>
+    </ul>
+
+    <input [(ngModel)]="_filter" type="text" class="form-control filter-tracks" (input)="0"/>
+
+    <ul class="tracks row">
+        <li *ngFor="let track of _artists[_currTab].tracks | trackFilter: _filter" class="track col-2">
+            {{track}}
+        </li>
+    </ul>
+</div>

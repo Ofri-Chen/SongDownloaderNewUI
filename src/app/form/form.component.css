@@ -1,0 +1,32 @@
+form {
+    /* text-align: center; */
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.form-container {
+    /* border: solid; */
+    width: 30%;    
+    margin-left: 7%;
+    margin-top: 3%;
+}
+
+.form-input {
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.form-input input{
+    margin-left: 2%;
+}
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+
+button {
+    margin-left: 50%;
+    margin-top: 3%;
+    cursor: pointer;
+}
