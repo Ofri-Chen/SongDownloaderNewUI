@@ -1,5 +1,7 @@
+import { Track } from "./track";
+
 export interface Artist {
     name: string;
-    tracks: string[];
+    tracks: Track[];
     withLyrics?: boolean;
 }

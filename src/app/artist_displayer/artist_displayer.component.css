@@ -7,10 +7,6 @@ ul {
     list-style: none;
 }
 
-.tabs {
-    /* margin-left: 4%; */
-}
-
 .tab {
     display: block;
     float: left;
@@ -22,10 +18,14 @@ ul {
     clear: both;
 }
 
+.filter-container span {
+    display: inline-block;
+}
+
 .filter-tracks {
-    clear: both;
     width: 200px;
     margin-left: 3%;
+    display: inline-block;
 }
 
 .track {
@@ -35,10 +35,83 @@ ul {
     margin-left: 1%;
 
     padding-top: 0.7%;
-    padding-bottom: 0.7%;
+    padding-bottom: 0.2%;
 
     border: solid;
     border-radius: 5px;
 
-    text-align:center;
+    text-align:left;
+}
+
+.track:hover {
+    /* background-color: rgba(160, 0, 181, 0.1); */
+}
+
+.remove-track-btn {
+    margin-left: 3px;
+}
+
+.remove-tab-btn {
+    float: left; 
+    margin-right: 20px;
+}
+
+.tab-artist-name {
+    font-size: 18px;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-left: 1%;
+}
+
+.filter-download-section {
+    clear: both;
+    float: left;
+    width: 20%;
+    margin-left: 3%;
+    margin-top: 4%;
+}
+
+iframe {
+    display: block;
+    float: left;
+}
+
+.with-lyrics-input {
+    display: inline-block;
+    margin-top: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+.with-lyrics {
+    margin-right: 5%;
+}
+
+.video-btn {
+    cursor: pointer;
+}
+
+.play-btn {
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    margin-left: 10%;
+}
+
+.next-video-btn, .prev-video-btn {
+    height: 30px;
+    width: 30px;
+    margin-top: 19px;
+}
+
+.prev-video-btn {
+    float: left;
+    margin-left: 18%;
+}
+
+.next-video-btn {
+    float: right;
+    margin-right: 18%;
 }

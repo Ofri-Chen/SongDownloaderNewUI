@@ -1,2 +1,3 @@
-<form-component (artist)="_addArtist($event)"></form-component>
-<artist-displayer [artists]="_artists"></artist-displayer>
+<add-artist-form (artist)="_addArtist($event)"></add-artist-form>
+<add-track-form (addTrack)="_addTrack($event)"></add-track-form>
+<artist-displayer [artists]="_artists" [addArtist]="_addArtistCount"></artist-displayer>

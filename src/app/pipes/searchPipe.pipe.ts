@@ -1,15 +1,21 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Track } from '../Types/track';
 
 @Pipe({
-    name: 'trackFilter'
+    name: 'trackFilter',
+    pure: false
 })
 export class TrackFilterPipe implements PipeTransform {
-    transform(tracks: Array<string>, searchQuery: string) {
+    transform(tracks: Array<Track>, searchQuery: string) {
         if (searchQuery == "" || searchQuery == undefined) {
             return tracks;
         }
         
-        let a = tracks.filter(track => track.toLowerCase().includes(searchQuery.toLowerCase()));
-        return a;
+        return tracks.filter(track => this._formatString(track.name)
+            .includes(this._formatString(searchQuery)));
+    }
+
+    private _formatString(str: string): string {
+        return str.toLowerCase().trim();
     }
 }
