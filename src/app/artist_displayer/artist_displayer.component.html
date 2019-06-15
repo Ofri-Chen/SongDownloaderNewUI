@@ -1,9 +1,9 @@
 <div *ngIf="_artists.length > 0" class="artist-displayer-container">
     <ul class="tabs">
         <li *ngFor="let artist of _artists, let i = index" class="tab">
-            <div class="btn" (click)="_changeTab(i)" [ngStyle]="_changeTabColor(i)">
-                <span class="tab-artist-name">{{artist.name}}</span>
+            <div class="tab-btn" (click)="_changeTab(i)" [ngStyle]="_changeTabColor(i)">
                 <button class="remove-tab-btn btn btn-sm" (click)="_removeArtist(artist)" [ngStyle]="_getRemoveArtistButtonColor(i)">X</button>
+                <span class="tab-artist-name">{{artist.name}}</span>
             </div>
 
         </li>
@@ -18,20 +18,19 @@
         <div class="download-section">
             <span class="with-lyrics">
                 <span class="with-lyrics-text">With Lyrics: </span>
-                <input type="checkbox" class="with-lyrics-input" [(ngModel)]="_artists[_currTab].withLyrics">
+            <input type="checkbox" class="with-lyrics-input" [(ngModel)]="_artists[_currTab].withLyrics">
             </span>
             <button class="download-btn btn" (click)="_downloadTracks()">Download</button>
         </div>
     </div>
 
     <iframe *ngIf="url" width="360" height="207.5" [src]="url" frameborder="0" allowfullscreen></iframe>
-    
+
     <ul class="tracks">
-        <li *ngFor="let track of _artists[_currTab].tracks | trackFilter: _filter" 
-            class="track" [ngStyle]="_getTrackStyle(track)">
+        <li *ngFor="let track of _artists[_currTab].tracks | trackFilter: _filter" class="track" [ngStyle]="_getTrackStyle(track)">
             <div class="header">
                 <button class="remove-track-btn btn btn-danger btn-sm" (click)="_removeTrack(track.name)">X</button>
-                <span>{{track.name}}</span>
+                <span class="track-name">{{track.name}}</span>
             </div>
             <div class="operation-buttons">
                 <img class="prev-video-btn video-btn" (click)="_prevVideo(track)" src="../../assets/prev_video.png" alt="(-">

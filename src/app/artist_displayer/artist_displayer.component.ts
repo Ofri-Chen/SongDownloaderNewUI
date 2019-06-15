@@ -19,7 +19,7 @@ export class ArtistDisplayerComponent implements OnChanges {
     baseUrl: string = 'https://www.youtube.com/embed/';
 
     private _currTab: number = 0;
-    private _filter: string = "";
+    private _filter: string = '';
     private _currPlayingTrack: TrackArtistPair;
 
     constructor(private _dataHandlerSrv: DataHandlerService,
@@ -55,19 +55,19 @@ export class ArtistDisplayerComponent implements OnChanges {
 
     _changeTabColor(index: number): object {
         if (index == this._currTab) {
-            return { 'background-color': "gray" };
+            return { 'background-color': 'gray' };
         }
         else {
-            return { 'background-color': "buttonface" };
+            return { 'background-color': 'buttonface' };
         }
     }
 
     private _getRemoveArtistButtonColor(index: number) {
         if (index != this._currTab) {
-            return { 'background-color': "gray" };
+            return { 'background-color': 'gray' };
         }
         else {
-            return { 'background-color': "buttonface" };
+            return { 'background-color': 'buttonface' };
         }
     }
 
@@ -118,15 +118,15 @@ export class ArtistDisplayerComponent implements OnChanges {
         if (this._currPlayingTrack 
             && this._artists[this._currTab].name == this._currPlayingTrack.artistName 
             && track.name == this._currPlayingTrack.track.name) {
-            return { 'background-color': "rgba(160, 0, 181, 0.5)" };
+            return { 'background-color': 'rgba(160, 0, 181, 0.5)' };
         }
         else {
-            return { 'background-color': "white" };
+            return { 'background-color': 'rgb(136, 105, 217, 0.5)' };
         }
     }
 
     private _clearVideo() {
-        this.url = "";
+        this.url = '';
         this._currPlayingTrack = null;
     }
 }

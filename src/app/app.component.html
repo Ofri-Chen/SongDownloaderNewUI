@@ -1,5 +1,7 @@
-<div class="forms-container">
-    <add-artist-form (artist)="_addArtist($event)"></add-artist-form>
-    <add-track-form (addTrack)="_addTrack($event)"></add-track-form>
+<div class="app-container">
+    <div class="forms-container">
+        <add-artist-form (artist)="_addArtist($event)"></add-artist-form>
+        <add-track-form (addTrack)="_addTrack($event)"></add-track-form>
+    </div>
+    <artist-displayer [artists]="_artists" [addArtist]="_addArtistCount"></artist-displayer>
 </div>
-<artist-displayer [artists]="_artists" [addArtist]="_addArtistCount"></artist-displayer>
