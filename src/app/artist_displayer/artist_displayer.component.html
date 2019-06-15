@@ -26,16 +26,18 @@
 
     <iframe *ngIf="url" width="360" height="207.5" [src]="url" frameborder="0" allowfullscreen></iframe>
     
-    <ul class="tracks row">
-        <li *ngFor="let track of _artists[_currTab].tracks | trackFilter: _filter, let i = index" 
-            class="track col-2" [ngStyle]="_getTrackStyle(track)">
-            <div>
+    <ul class="tracks">
+        <li *ngFor="let track of _artists[_currTab].tracks | trackFilter: _filter" 
+            class="track" [ngStyle]="_getTrackStyle(track)">
+            <div class="header">
                 <button class="remove-track-btn btn btn-danger btn-sm" (click)="_removeTrack(track.name)">X</button>
                 <span>{{track.name}}</span>
             </div>
-            <img class="prev-video-btn video-btn" (click)="_prevVideo(track)" src="../../assets/prev_video.png" alt="(-">
-            <img class="play-btn video-btn" (click)="_playVideo(track)" src="../../assets/play-button.jpg" alt=">">
-            <img class="next-video-btn video-btn" (click)="_nextVideo(track)" src="../../assets/next_video.png" alt="-)">
+            <div class="operation-buttons">
+                <img class="prev-video-btn video-btn" (click)="_prevVideo(track)" src="../../assets/prev_video.png" alt="(-">
+                <img class="play-btn video-btn" (click)="_playVideo(track)" src="../../assets/play-button.jpg" alt=">">
+                <img class="next-video-btn video-btn" (click)="_nextVideo(track)" src="../../assets/next_video.png" alt="-)">
+            </div>
         </li>
     </ul>
 </div>

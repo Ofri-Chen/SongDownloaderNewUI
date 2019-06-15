@@ -29,6 +29,8 @@ ul {
 }
 
 .track {
+    display: flex;
+
     margin-top: 1%;
     clear: both;
 
@@ -41,6 +43,20 @@ ul {
     border-radius: 5px;
 
     text-align:left;
+
+    height: 150px;
+}
+
+.header {
+    align-items: flex-start;
+    width: 100%;
+    height: max-content;
+}
+
+.operation-buttons {
+    display: flex;
+    align-self: flex-end;
+    width: 100%;
 }
 
 .track:hover {
