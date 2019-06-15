@@ -55,16 +55,16 @@ export class ArtistDisplayerComponent implements OnChanges {
 
     _changeTabColor(index: number): object {
         if (index == this._currTab) {
-            return { 'background-color': 'gray' };
+            return { 'background-color': 'rgba(160, 0, 181, 0.5)' };
         }
         else {
-            return { 'background-color': 'buttonface' };
+            return { 'background-color': 'rgb(136, 105, 217, 0.5)' };
         }
     }
 
     private _getRemoveArtistButtonColor(index: number) {
         if (index != this._currTab) {
-            return { 'background-color': 'gray' };
+            return { 'background-color': 'buttonface' };
         }
         else {
             return { 'background-color': 'buttonface' };

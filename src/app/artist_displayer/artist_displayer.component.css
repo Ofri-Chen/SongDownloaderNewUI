@@ -21,7 +21,9 @@ ul {
     display: flex;
     margin-right: 10px;
     margin-top: 7px;
+    border-radius: 9px;
     cursor: pointer;
+    border: 1px solid black;
 }
 
 .tab-btn {
@@ -44,15 +46,17 @@ ul {
     width: 200px;
     margin-left: 3%;
     display: inline-block;
+    border-radius: 13px;
+    height: 26px;
 }
 
 .track {
     display: flex;
     flex-direction: column;
     border: 1px solid;
+    border-radius: 10px;
     width: 270px;
     margin: 6px;
-    border-radius: 22px;
 }
 
 .track-name {
@@ -95,6 +99,11 @@ ul {
 .download-btn {
     display: inline-block;
     margin-left: 1%;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    background-color: #57c157;
+    cursor: pointer;
 }
 
 .filter-download-section {
@@ -124,4 +133,5 @@ iframe {
 .video-btn {
     cursor: pointer;
     height: 30px;
+    margin: 5px;
 }
