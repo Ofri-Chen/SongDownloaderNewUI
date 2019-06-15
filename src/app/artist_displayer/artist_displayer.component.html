@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <iframe *ngIf="url" width="240" height="135" [src]="url" frameborder="0" allowfullscreen></iframe>
+    <iframe *ngIf="url" width="360" height="207.5" [src]="url" frameborder="0" allowfullscreen></iframe>
     
     <ul class="tracks row">
         <li *ngFor="let track of _artists[_currTab].tracks | trackFilter: _filter, let i = index" 
