@@ -1,15 +1,18 @@
-<div class="form-container border border-secondary">
-    <h2>Add Artist</h2>
+<div class="form-container">
+    <div class="header-container">
+        <h2>Add Artist</h2>
+    </div>
     <form class='form'>
         <div class="form-input">
-            <label class="artist-name-label">ArtistName:</label> 
+            <label class="artist-name-label">ArtistName:</label>
             <input name="artistName" type="text" [(ngModel)]="artistName">
         </div>
         <div class="form-input">
             <label>Amount Of Songs:</label>
             <input name="numOfTracks" [(ngModel)]="numOfTracks" type="text">
         </div>
-
-        <button class='btn' (click)="performSearch()">Search</button>
+        <div class="button-container">
+            <button class='btn' (click)="performSearch()">Search</button>
+        </div>
     </form>
 </div>

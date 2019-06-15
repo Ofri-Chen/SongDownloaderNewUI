@@ -1,5 +1,7 @@
 <div class="form-container border border-secondary">
-    <h2>Add Song</h2>
+    <div class="header-container">
+        <h2>Add Song</h2>
+    </div>
     <form class='form'>
         <div class="form-input">
             <label class="artist-name-label">ArtistName:</label>
@@ -9,7 +11,8 @@
             <label>Song Name:</label>
             <input name="trackName" [(ngModel)]="trackName" type="text">
         </div>
-
-        <button class='btn' (click)="_addTrack()">Search</button>
+        <div class="button-container">
+            <button class='btn' (click)="_addTrack()">Search</button>
+        </div>
     </form>
 </div>

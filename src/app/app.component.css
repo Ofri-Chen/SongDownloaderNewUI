@@ -1,4 +1,15 @@
-add-artist-form, add-track-form {
-    display: inline-block;
-    width: 40%;
+.forms-container {
+    display: flex;
+}
+
+add-artist-form,
+add-track-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    border: 1px solid;
+    width: max-content;
+    align-content: right;
+    margin: 45px;
 }

@@ -1,31 +1,33 @@
-form {
-    margin-top: 5%;
-    margin-bottom: 3%;
-}
-
 .form-container {
-    width: 75%;    
-    margin-left: 7%;
-    margin-top: 3%;
-    text-align: center;
+    padding-bottom: 10px;
 }
 
 .form-input {
-    margin-left: 10%;
-    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 15px;
 }
 
-.form-input input{
-    margin-left: 2%;
+.header-container {
+    width: 100%;
+    text-align: center;
 }
-label {
-    display: inline-block;
-    width: 150px;
-    text-align: right;
+
+.form-input label {
+    margin-right: 3px;
 }
 
 button {
     margin-left: 50%;
     margin-top: 3%;
     cursor: pointer;
+    padding: 5px;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
