@@ -17,7 +17,7 @@ export class SrvComService {
     private _serverUrl = 'http://localhost:5555';
 
     public async getTopTracks(artistName: string, numOfTracks: number): Promise<ServerArtist> {
-        if (!this.isTopTracksParamsValid) {
+        if (!this.isTopTracksParamsValid(artistName, numOfTracks)) {
             throw new Error('bad parameters');
         }
         const requestUri = await this.buildRequestUri(new TopTracksRoute(artistName, numOfTracks));

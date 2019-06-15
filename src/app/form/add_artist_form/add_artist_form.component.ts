@@ -12,8 +12,8 @@ import { Track } from '../../Types/track';
     styleUrls: ['./add_artist_form.component.css']
 })
 export class AddArtistFormComponent implements OnInit {
-    private _artistName: string;
-    private _numOfTracks: number;
+    public artistName: string;
+    public numOfTracks: number;
 
     @Output('artist') artist = new EventEmitter<Artist>();
 
@@ -21,27 +21,19 @@ export class AddArtistFormComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this._artistName = "Metallica";
-        this._numOfTracks = 10;
     }
 
-    private _performSearch() {
-        let thisCopy = this; //otherwise it will be undefinded in the arrow function
+    public async performSearch() {
+        const artist = await this._srvComService.getTopTracks(this.artistName, this.numOfTracks);
+        const tracks: Track[] = artist.tracks.map(track => ({
+            name: track,
+            curr_video: 0
+        }));
 
-        this._srvComService.getTopTracks(this._artistName, this._numOfTracks)
-            .then(function (artist) {
-                let tracks: Track[] = artist.tracks.map(track => {
-                    return {
-                        name: track,
-                        curr_video: 0
-                    }
-                });
-                thisCopy.artist.emit({
-                    name: artist.name,
-                    tracks: tracks,
-                    withLyrics: artist.withLyrics
-                });
-                // thisCopy._dataHandlerSrv.addArtist(artist); //that's the arrow function :P
-            });
+        this.artist.emit({
+            name: artist.name,
+            tracks: tracks,
+            withLyrics: artist.withLyrics
+        });
     }
 }

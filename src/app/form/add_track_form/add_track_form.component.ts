@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Track } from '../../Types/track';
 import { TrackArtistPair } from '../../Types/track-artist-pair';
 
@@ -10,15 +10,13 @@ import { TrackArtistPair } from '../../Types/track-artist-pair';
 export class AddTrackFormComponent {
     @Output() addTrack = new EventEmitter<TrackArtistPair>();
 
-    private _artistName: string = "Metallica";
-    private _trackName: string = "Nothinig Else Matters";
+    public artistName = '';
+    public trackName = '';
 
     ngOnInit(): void {
-        this._artistName = "Foo Fighters"; 
-        this._trackName = "Everlong";
     }
 
     private _addTrack() {
-        this.addTrack.emit({artistName: this._artistName, track: {name: this._trackName, curr_video: 0}});
+        this.addTrack.emit({ artistName: this.artistName, track: { name: this.trackName, curr_video: 0 } });
     }
 }

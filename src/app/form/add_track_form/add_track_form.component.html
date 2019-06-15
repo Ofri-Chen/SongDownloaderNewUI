@@ -3,11 +3,11 @@
     <form class='form'>
         <div class="form-input">
             <label class="artist-name-label">ArtistName:</label>
-            <input name="artistName" type="text" [(ngModel)]="_artistName">
+            <input name="artistName" type="text" [(ngModel)]="artistName">
         </div>
         <div class="form-input">
             <label>Song Name:</label>
-            <input name="trackName" [(ngModel)]="_trackName" type="text">
+            <input name="trackName" [(ngModel)]="trackName" type="text">
         </div>
 
         <button class='btn' (click)="_addTrack()">Search</button>

@@ -7,10 +7,10 @@ import { Track } from '../Types/track';
 })
 export class TrackFilterPipe implements PipeTransform {
     transform(tracks: Array<Track>, searchQuery: string) {
-        if (searchQuery == "" || searchQuery == undefined) {
+        if (searchQuery === '' || searchQuery === undefined) {
             return tracks;
         }
-        
+
         return tracks.filter(track => this._formatString(track.name)
             .includes(this._formatString(searchQuery)));
     }
