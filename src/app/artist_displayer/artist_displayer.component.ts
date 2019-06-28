@@ -20,7 +20,7 @@ export class ArtistDisplayerComponent implements OnChanges {
 
     private _currTab: number = 0;
     private _filter: string = '';
-    private _currPlayingTrack: TrackArtistPair;
+    private currPlayingTrack: TrackArtistPair;
 
     constructor(private _dataHandlerSrv: DataHandlerService,
         private _srvComService: SrvComService,
@@ -37,9 +37,9 @@ export class ArtistDisplayerComponent implements OnChanges {
         this._currTab = index;
     }
 
-    _removeTrack(trackName: string) {
+    removeTrack(trackName: string) {
         let artistName = this._artists[this._currTab].name;
-        if(this._currPlayingTrack && this._currPlayingTrack.track.name == trackName) {
+        if(this.currPlayingTrack && this.currPlayingTrack.track.name == trackName) {
             this._clearVideo();
         }        
         this._dataHandlerSrv.removeTrack(artistName, trackName);
@@ -72,7 +72,7 @@ export class ArtistDisplayerComponent implements OnChanges {
     }
 
     private _removeArtist(artist: Artist) {
-        if(this._currPlayingTrack && this._currPlayingTrack.artistName == artist.name) {
+        if(this.currPlayingTrack && this.currPlayingTrack.artistName == artist.name) {
             this._clearVideo()
         }
         this._removeArtistTabLogic(artist.name);
@@ -99,34 +99,23 @@ export class ArtistDisplayerComponent implements OnChanges {
                     .bypassSecurityTrustResourceUrl(`${this.baseUrl}${videoId}?autoplay=1`);
                 track.videoId = videoId;
             });
-        this._currPlayingTrack = { artistName: artist.name, track: track};
+        this.currPlayingTrack = { artistName: artist.name, track: track};
     }
 
-    private _nextVideo(track: Track) {
+    private nextVideo(track: Track) {
         track.curr_video++;
         this._playVideo(track);
     }
 
-    private _prevVideo(track: Track) {
+    private prevVideo(track: Track) {
         if (track.curr_video > 0) {
             track.curr_video--;
             this._playVideo(track);
         }
     }
 
-    private _getTrackStyle(track: Track) {
-        if (this._currPlayingTrack 
-            && this._artists[this._currTab].name == this._currPlayingTrack.artistName 
-            && track.name == this._currPlayingTrack.track.name) {
-            return { 'background-color': 'rgba(160, 0, 181, 0.5)' };
-        }
-        else {
-            return { 'background-color': 'rgb(136, 105, 217, 0.5)' };
-        }
-    }
-
     private _clearVideo() {
         this.url = '';
-        this._currPlayingTrack = null;
+        this.currPlayingTrack = null;
     }
 }

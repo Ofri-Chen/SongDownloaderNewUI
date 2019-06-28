@@ -1,0 +1,13 @@
+<ul class="tracks">
+    <li *ngFor="let track of tracks | trackFilter: _filter" class="track" [ngStyle]="getTrackStyle(track)">
+        <div class="header">
+            <button class="remove-track-btn btn btn-danger btn-sm" (click)="removeTrack(track.name)">X</button>
+            <span class="track-name">{{track.name}}</span>
+        </div>
+        <div class="operation-buttons">
+            <img class="prev-video-btn video-btn" (click)="prevVideo(track)" src="../../assets/prev_video.png" alt="(-">
+            <img class="play-btn video-btn" (click)="playVideo(track)" src="../../assets/play-button.jpg" alt=">">
+            <img class="next-video-btn video-btn" (click)="nextVideo(track)" src="../../assets/next_video.png" alt="-)">
+        </div>
+    </li>
+</ul>

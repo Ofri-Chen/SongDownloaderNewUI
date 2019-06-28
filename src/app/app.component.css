@@ -1,5 +1,5 @@
 .app-container {
-    height: 100%;
+    min-height: 100%;
     background-image: radial-gradient(#5680E9, #84CEEB, #5AB9EA, #C1C8E4);
 }
 
@@ -16,7 +16,8 @@ add-track-form {
     border: 1px solid;
     width: max-content;
     align-content: right;
-    margin: 45px;
+    margin-top: 45px;
+    margin-left: 45px;
     background-color: rgb(136, 105, 217, 0.5);
     border-radius: 22px;
 }

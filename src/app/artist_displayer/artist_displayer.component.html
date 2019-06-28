@@ -1,14 +1,4 @@
 <div *ngIf="_artists.length > 0" class="artist-displayer-container">
-    <ul class="tabs">
-        <li *ngFor="let artist of _artists, let i = index" class="tab" [ngStyle]="_changeTabColor(i)">
-            <div class="tab-btn" (click)="_changeTab(i)">
-                <button class="remove-tab-btn btn btn-sm" (click)="_removeArtist(artist)" [ngStyle]="_getRemoveArtistButtonColor(i)">X</button>
-                <span class="tab-artist-name">{{artist.name}}</span>
-            </div>
-
-        </li>
-    </ul>
-
     <div class="operations-container">
         <div class="filter-download-section">
             <div class="filter-container">
@@ -25,10 +15,22 @@
             </div>
         </div>
 
-        <iframe *ngIf="url" width="360" height="207" [src]="url" frameborder="0" allowfullscreen></iframe>
+        <iframe *ngIf="url" width="344" height="188" [src]="url" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <ul class="tracks">
+    <ul class="tabs">
+        <li *ngFor="let artist of _artists, let i = index" class="tab" [ngStyle]="_changeTabColor(i)">
+            <div class="tab-btn" (click)="_changeTab(i)">
+                <button class="remove-tab-btn btn btn-sm" (click)="_removeArtist(artist)" [ngStyle]="_getRemoveArtistButtonColor(i)">X</button>
+                <span class="tab-artist-name">{{artist.name}}</span>
+            </div>
+
+        </li>
+    </ul>
+
+    <tracks-displayer [tracks]=_artists[_currTab].tracks (onPrevVideoClick)="prevVideo($event)" (onPlayVideoClick)="playVideo($event)" (onNextVideoClick)="nextVideo($event)" (onRemoveTrackClick)="removeTrack($event)" [currentPlayingTrack]="currPlayingTrack?.name"></tracks-displayer>
+
+    <!-- <ul class="tracks">
         <li *ngFor="let track of _artists[_currTab].tracks | trackFilter: _filter" class="track" [ngStyle]="_getTrackStyle(track)">
             <div class="header">
                 <button class="remove-track-btn btn btn-danger btn-sm" (click)="_removeTrack(track.name)">X</button>
@@ -40,5 +42,5 @@
                 <img class="next-video-btn video-btn" (click)="_nextVideo(track)" src="../../assets/next_video.png" alt="-)">
             </div>
         </li>
-    </ul>
+    </ul> -->
 </div>

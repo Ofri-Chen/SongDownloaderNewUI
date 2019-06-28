@@ -10,6 +10,7 @@ import { DataHandlerService } from './services/dataHandlerService.service';
 import { ArtistDisplayerComponent } from './artist_displayer/artist_displayer.component';
 import { TrackFilterPipe } from './pipes/searchPipe.pipe';
 import { AddTrackFormComponent } from './form/add_track_form/add_track_form.component';
+import { TracksDisplayerComponent } from './tracks-displayer/tracks-displayer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddTrackFormComponent } from './form/add_track_form/add_track_form.comp
     AddArtistFormComponent,
     ArtistDisplayerComponent,
     AddTrackFormComponent,
-    TrackFilterPipe
+    TrackFilterPipe,
+    TracksDisplayerComponent
   ],
   imports: [
     BrowserModule,
