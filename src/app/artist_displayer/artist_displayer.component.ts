@@ -91,7 +91,7 @@ export class ArtistDisplayerComponent implements OnChanges {
         }
     }
 
-    private _playVideo(track: Track) {
+    private playVideo(track: Track) {
         let artist = this._artists[this._currTab];
         this._srvComService.getVideoId(artist.name, track.name, artist.withLyrics, track.curr_video)
             .then((videoId) => {
@@ -104,13 +104,13 @@ export class ArtistDisplayerComponent implements OnChanges {
 
     private nextVideo(track: Track) {
         track.curr_video++;
-        this._playVideo(track);
+        this.playVideo(track);
     }
 
     private prevVideo(track: Track) {
         if (track.curr_video > 0) {
             track.curr_video--;
-            this._playVideo(track);
+            this.playVideo(track);
         }
     }
 
