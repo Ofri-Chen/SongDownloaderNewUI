@@ -26,7 +26,7 @@ export class SrvComService {
 
     public getVideoId(artistName: string, trackName: string, withLyrics: boolean, resultNum: number = 0): Promise<string> {
         const requestUri = this.buildRequestUri(new GetVideoIdRoute(artistName, trackName, withLyrics, resultNum));
-        return this.parseResponse(this._http.get(requestUri));
+        return this.parseResponse(this._http.get(requestUri), false);
     }
 
     public downloadTracks(artist: Artist): Promise<Artist> {
@@ -34,8 +34,11 @@ export class SrvComService {
         return this.parseResponse(this._http.post(requestUri, artist));
     }
 
-    private parseResponse<T>(response: Observable<Response>): Promise<T> {
-        return response.pipe(map(value => JSON.parse(value['_body']))).toPromise()
+    private parseResponse<T>(response: Observable<Response>, isJson: boolean = true): Promise<T> {
+        return response.pipe(map(value => {
+            const resData = value['_body'];
+            return isJson ? JSON.parse(resData) : resData;
+        })).toPromise()
     }
 
     private isTopTracksParamsValid(artistName: string, numOfTracks: number): boolean {
