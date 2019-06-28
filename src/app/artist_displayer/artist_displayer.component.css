@@ -70,6 +70,12 @@ ul {
     margin: 4px;
 }
 
+.operations-container {
+    display: flex;
+    align-items: flex-start;
+    height: 207px;
+}
+
 .operation-buttons {
     display: flex;
     align-self: flex-end;

@@ -9,22 +9,24 @@
         </li>
     </ul>
 
-    <div class="filter-download-section">
-        <div class="filter-container">
-            <span>Filter: </span>
-            <input [(ngModel)]="_filter" type="text" class="form-control filter-tracks" (input)="0" />
+    <div class="operations-container">
+        <div class="filter-download-section">
+            <div class="filter-container">
+                <span>Filter: </span>
+                <input [(ngModel)]="_filter" type="text" class="form-control filter-tracks" (input)="0" />
+            </div>
+
+            <div class="download-section">
+                <span class="with-lyrics">
+                    <span class="with-lyrics-text">With Lyrics: </span>
+                <input type="checkbox" class="with-lyrics-input" [(ngModel)]="_artists[_currTab].withLyrics">
+                </span>
+                <button class="download-btn btn" (click)="_downloadTracks()">Download</button>
+            </div>
         </div>
 
-        <div class="download-section">
-            <span class="with-lyrics">
-                <span class="with-lyrics-text">With Lyrics: </span>
-            <input type="checkbox" class="with-lyrics-input" [(ngModel)]="_artists[_currTab].withLyrics">
-            </span>
-            <button class="download-btn btn" (click)="_downloadTracks()">Download</button>
-        </div>
+        <iframe *ngIf="url" width="360" height="207" [src]="url" frameborder="0" allowfullscreen></iframe>
     </div>
-
-    <iframe *ngIf="url" width="360" height="207.5" [src]="url" frameborder="0" allowfullscreen></iframe>
 
     <ul class="tracks">
         <li *ngFor="let track of _artists[_currTab].tracks | trackFilter: _filter" class="track" [ngStyle]="_getTrackStyle(track)">
